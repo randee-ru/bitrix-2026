@@ -10,5 +10,7 @@
 | 3 | [04-vue.md](04-vue.md) | Vue-компоненты в `local/components-vue/`. |
 | 4 | [05-custom-modules.md](05-custom-modules.md) | Свои модули и [bitrix-version-builder](https://github.com/denx-b/bitrix-version-builder). |
 | 5 | [06-github.md](06-github.md) | Публикация в [bitrix-2026](https://github.com/randee-ru/bitrix-2026). |
+| 6 | [07-legacy-api.md](07-legacy-api.md) | REST-подобное API `/api/*`: маршруты, новые методы, файлы. |
+| 7 | [08-api-prostymi-slovami.md](08-api-prostymi-slovami.md) | То же API **простыми словами** для ученика (без глубокого бэкенда). |
 
 Идея репозитория: **в Git лежит всё своё** (`local/`, Docker, фронт), **ядро и upload не коммитим** (см. `.gitignore`).
