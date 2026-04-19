@@ -1,10 +1,10 @@
-import path from "path";
+import nodePath from "path";
 import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectRoot = path.resolve(__dirname, "../../..");
-const buildFolder = path.join(projectRoot, "www", "local", "templates", "legacy", "build");
-const srcFolder = path.resolve(__dirname, "../../src");
+const __dirname = nodePath.dirname(fileURLToPath(import.meta.url));
+const projectRoot = nodePath.resolve(__dirname, "../../..");
+const buildFolder = nodePath.join(projectRoot, "www", "local", "templates", "legacy", "build");
+const srcFolder = nodePath.resolve(__dirname, "../../src");
 
 export const path = {
     build: {
