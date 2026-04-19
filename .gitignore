@@ -14,6 +14,9 @@ www/bitrix_server_test.php
 
 www/local/php_interface/legacy/vendor/
 
+# Вывод npm run build — не хранить в Git (пересборка на машине/CI)
+www/local/templates/legacy/build/
+
 frontend/node_modules/
 frontend/public/
 
