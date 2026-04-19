@@ -20,7 +20,7 @@
    make bootstrap
    ```
 
-   Скрипт [`scripts/bootstrap-env-docker.sh`](../scripts/bootstrap-env-docker.sh) выполнит `git clone` репозитория [bitrix-tools/env-docker](https://github.com/bitrix-tools/env-docker.git) (ветка по умолчанию у репозитория). Переменные `ENV_DOCKER_REPO` и `ENV_DOCKER_REF` позволяют переопределить URL и ref (см. [`.env.example`](../.env.example)).
+   Цель **`make bootstrap`** в корневом [`Makefile`](../Makefile) выполнит `git clone` репозитория [bitrix-tools/env-docker](https://github.com/bitrix-tools/env-docker.git) (ветка по умолчанию у репозитория). Переопределение URL и ref: переменные **`ENV_DOCKER_REPO`** и **`ENV_DOCKER_REF`** у `make`, например `make bootstrap ENV_DOCKER_REF=main` (см. [`.env.example`](../.env.example)).
 
    **Альтернатива — git submodule:** тогда удалите строку `docker/env-docker/` из [`.gitignore`](../.gitignore) и добавьте submodule; каталог будет версионироваться ссылкой на коммит upstream.
 

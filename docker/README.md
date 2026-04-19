@@ -2,7 +2,7 @@
 
 Используется официальный репозиторий **[bitrix-tools/env-docker](https://github.com/bitrix-tools/env-docker)** — контейнеры, образы и конфигурации от команды 1С-Битрикс (PHP-FPM, Nginx, Percona, PostgreSQL, Redis, Push, Sphinx, Cron и т.д.).
 
-Каталог `docker/env-docker/` **не хранится в Git** этого проекта (см. `.gitignore`): его создаёт скрипт `scripts/bootstrap-env-docker.sh` или submodule.
+Каталог `docker/env-docker/` **не хранится в Git** этого проекта (см. `.gitignore`): его создаёт **`make bootstrap`** в корневом `Makefile` или submodule.
 
 Корневой [`docker-compose.yml`](../docker-compose.yml) подключает `env-docker` через [`include`](https://docs.docker.com/reference/compose-file/include/) и задаёт:
 

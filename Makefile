@@ -1,7 +1,23 @@
 .PHONY: bootstrap up down logs composer npm-build
 
+# Клонирование env-docker (логика в Makefile — без отдельного .sh, чтобы не ловить BOM/тире в скриптах).
+ENV_DOCKER_REPO ?= https://github.com/bitrix-tools/env-docker.git
+ENV_DOCKER_REF ?=
+
 bootstrap:
-	sh scripts/bootstrap-env-docker.sh
+	@if [ -f docker/env-docker/docker-compose.yml ]; then \
+		echo "env-docker уже на месте: docker/env-docker"; \
+	elif [ -e docker/env-docker ]; then \
+		echo "Каталог docker/env-docker есть, но нет docker-compose.yml — удалите каталог вручную"; \
+		exit 1; \
+	else \
+		if [ -n "$(ENV_DOCKER_REF)" ]; then \
+			git clone --depth 1 --branch "$(ENV_DOCKER_REF)" "$(ENV_DOCKER_REPO)" docker/env-docker; \
+		else \
+			git clone --depth 1 "$(ENV_DOCKER_REPO)" docker/env-docker; \
+		fi; \
+		echo "Готово. Настройте docker/env-docker/.env (docs/02-docker.md)"; \
+	fi
 
 up: bootstrap
 	docker compose up -d
