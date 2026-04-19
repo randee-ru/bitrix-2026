@@ -1,0 +1,30 @@
+# Официальное окружение 1С-Битрикс: https://github.com/bitrix-tools/env-docker
+# Перед первым запуском: make bootstrap (клонирует docker/env-docker при отсутствии).
+#
+# Сайт в контейнерах: /opt/www/ → смонтирован каталог ./www этого репозитория.
+# HTTP: http://127.0.0.1:8080/  (в upstream по умолчанию 8588 — см. override ниже).
+
+name: bitrix2026
+
+include:
+  - path: docker/env-docker/docker-compose.yml
+
+services:
+  nginx:
+    ports: !override
+      - "8080:80"
+      - "8589:443"
+    volumes:
+      - ./www:/opt/www/
+
+  php:
+    volumes:
+      - ./www:/opt/www/
+
+  cron:
+    volumes:
+      - ./www:/opt/www/
+
+  mysql:
+    ports:
+      - "33060:3306"

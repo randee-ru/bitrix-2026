@@ -1,0 +1,22 @@
+.DS_Store
+.env
+.idea
+.vscode
+
+# Официальное окружение клонируется локально (make bootstrap) или через git submodule
+docker/env-docker/
+
+www/bitrix/
+www/upload/
+www/.settings.php
+www/.settings_extra.php
+www/bitrix_server_test.php
+
+www/local/php_interface/legacy/vendor/
+
+frontend/node_modules/
+frontend/public/
+
+*.log
+*.sql
+*.zip

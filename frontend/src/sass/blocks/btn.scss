@@ -1,0 +1,39 @@
+.btn {
+  display: inline-flex;
+  padding: 7px 20px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+
+  color: white;
+
+  background-color: #ffb81f;
+  border: none;
+  cursor: pointer;
+
+  transition: opacity $trans-default;
+
+  &--big {
+    padding: 18px 60px;
+    font-size: 16px;
+  }
+
+  &--orange {
+    background-color: #ff8562;
+  }
+
+  &--red {
+    background-color: $color-torch-red;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}

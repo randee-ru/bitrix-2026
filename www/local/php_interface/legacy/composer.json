@@ -1,0 +1,14 @@
+{
+    "name": "legacy/framework",
+    "description": "Project PHP dependencies (Vue bridge, etc.)",
+    "require": {
+        "php": ">=8.1",
+        "denx-b/bitrix-vue-component": "^1.1"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
