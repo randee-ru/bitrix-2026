@@ -8,9 +8,10 @@ bootstrap:
 	@if [ -f docker/env-docker/docker-compose.yml ]; then \
 		echo "env-docker уже на месте: docker/env-docker"; \
 	elif [ -e docker/env-docker ]; then \
-		echo "Каталог docker/env-docker есть, но нет docker-compose.yml — удалите каталог вручную"; \
-		exit 1; \
-	else \
+		echo "Каталог docker/env-docker неполный (нет docker-compose.yml) — удаляю и клонирую заново..."; \
+		rm -rf docker/env-docker; \
+	fi; \
+	if [ ! -f docker/env-docker/docker-compose.yml ]; then \
 		if [ -n "$(ENV_DOCKER_REF)" ]; then \
 			git clone --depth 1 --branch "$(ENV_DOCKER_REF)" "$(ENV_DOCKER_REPO)" docker/env-docker; \
 		else \

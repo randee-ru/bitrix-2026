@@ -27,4 +27,4 @@ services:
 
   mysql:
     ports:
-      - "33060:3306"
+      - "${HOST_MYSQL_PORT:-33061}:3306"
